@@ -50,5 +50,15 @@ class TestMyfunc_test(unittest.TestCase):
         self.assertEqual(1, divide(2,2))
         self.assertNotEqual(1, divide(2,3))
 
+# if __name__ == '__main__':
+#     unittest.main()
+    
 if __name__ == '__main__':
-    unittest.main()
+    
+    #使用TestSuit控制用例顺序，用例执行顺序是添加的顺序
+    tests = [TestMyfunc_test('test_is_prime'), TestMyfunc_test('test_is_prime2')]
+    suite = unittest.TestSuite()
+    suite.addTests(tests)
+    
+    runner = unittest.TextTestRunner()
+    runner.run(suite)

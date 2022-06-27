@@ -23,7 +23,10 @@ class TestMyfunc_test(unittest.TestCase):
     @unittest.expectedFailure
     def test_is_prime2(self): 
         print('is prime2')
-        self.assertTrue(isprime(8))
+        try:
+            self.assertTrue(isprime(8))
+        except Exception as e:
+            print("错误信息：", e)
     
     #过滤整个测试function函数
     @unittest.skip("skip")
@@ -52,7 +55,8 @@ class TestMyfunc_test(unittest.TestCase):
 
 # if __name__ == '__main__':
 #     unittest.main()
-    
+
+'''
 if __name__ == '__main__':
     
     #使用TestSuit控制用例顺序，用例执行顺序是添加的顺序
@@ -62,3 +66,4 @@ if __name__ == '__main__':
     
     runner = unittest.TextTestRunner()
     runner.run(suite)
+'''   
